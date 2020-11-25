@@ -1,0 +1,9 @@
+1. create angular project using:  ng new findr (in this project i clicked NO routing and use SCSS)
+2. install: npm i jquery then npm i bootstrap
+3. open angular.json > under "styles" add "node_modules/bootstrap/dist/css/bootstrap.min.css" under "scripts" add "node_modules/jquery/dist/jquery.min.js" and "node_modules/bootstrap/dist/js/bootstrap.min.js"
+4. Add <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> to the HEAD tags of the index.html file
+4. Run the app to check using: ng serve
+5. Add bootstrap navbar in app.component.html 
+6. Add bootstrap section for jumpotron component in app.component.html 
+7. from terminal create new component: ng generate component admin-login
+7. from terminal create new component: ng generate component admin-table

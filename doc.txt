@@ -5,6 +5,5 @@
 5. Add bootstrap navbar in app.component.html 
 6. Add bootstrap section for jumpotron component in app.component.html 
 7. Run the app to check using: ng serve
-8. from terminal create new component: ng generate component admin-login
-9. Apply the css to the admin-login.componeny.scss for the  admin-login.componeny.html
+9. Add admin login form to app.componeny.html and apply the css to the app.componeny.scss 
 10. from terminal create new component: ng generate component admin-table

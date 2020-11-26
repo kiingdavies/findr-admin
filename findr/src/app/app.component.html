@@ -1,21 +1,41 @@
 <!-- navbar -->
-  <nav class="navbar navbar-fixed-top navbar-dark bg-dark ">
+<!-- <ng-container >  -->
+<nav class="navbar navbar-fixed-top navbar-dark bg-dark ">
    
     <a class="navbar-brand mr-auto " href="#">Findr Admin</a>
     <!-- Login button -->
-    <button type="button" class="btn btn-outline-light">Logout</button>
+    <button type="button" class="btn btn-outline-light" *ngIf="show">{{buttonName}}</button>
  
   </nav>
+<!-- </ng-container>  -->
 
-
-<!-- jumpotron
+<!-- jumpotron dunno where to use this jumpotron
 <section class="jumpotron bg-light text-center">
   <h1>Security Rethinked</h1>
   <p class="lead text-muted">Powered By Nural network</p>
 </section> -->
 
 <!-- Admin Login Form Component view renders here  -->
-<app-admin-login></app-admin-login>
+<div class="container h-80 admin" *ngIf="!show">
+  <div class="row align-items-center h-100">
+      <div class="col-3 mx-auto">
+          <div class="text-center">
+              <img id="profile-img" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
+              <p id="profile-name" class="profile-name-card"></p>
 
-<!-- Admin Table Component view renders here  -->
-<!-- <app-admin-table *ngIf="showDiv.previous"></app-admin-table> -->
+              <form class="form-signin">
+                  <input type="text" name="username" id="inputUsername" class="form-control form-group"
+                      placeholder="username" required autofocus>
+                  <input type="password" name="password" id="inputPassword" class="form-control form-group"
+                      placeholder="password" required autofocus>
+                  <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="toogle()">Enter</button>
+                  <!-- <input type="button" ng-model="checked" aria-label="Toggle ngHide" value="Enter"> -->
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- admin table renders here when user logged in -->
+<app-admin-table *ngIf="show"></app-admin-table>
+

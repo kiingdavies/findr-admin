@@ -1,12 +1,12 @@
 <!-- navbar -->
 <!-- <ng-container >  -->
 <nav class="navbar navbar-fixed-top navbar-dark bg-dark ">
-   
+
     <a class="navbar-brand mr-auto " href="#">Findr Admin</a>
     <!-- Login button -->
     <button type="button" class="btn btn-outline-light" *ngIf="show">{{buttonName}}</button>
- 
-  </nav>
+
+</nav>
 <!-- </ng-container>  -->
 
 <!-- jumpotron dunno where to use this jumpotron
@@ -17,25 +17,30 @@
 
 <!-- Admin Login Form Component view renders here  -->
 <div class="container h-80 admin" *ngIf="!show">
-  <div class="row align-items-center h-100">
-      <div class="col-3 mx-auto">
-          <div class="text-center">
-              <img id="profile-img" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
-              <p id="profile-name" class="profile-name-card"></p>
+    <div class="row align-items-center h-100">
+        <div class="col-3 mx-auto">
+            <div class="text-center">
+                <img id="profile-img" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
+                <p id="profile-name" class="profile-name-card"></p>
 
-              <form class="form-signin">
-                  <input type="text" name="username" id="inputUsername" class="form-control form-group"
-                      placeholder="username" required autofocus>
-                  <input type="password" name="password" id="inputPassword" class="form-control form-group"
-                      placeholder="password" required autofocus>
-                  <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="toogle()">Enter</button>
-                  <!-- <input type="button" ng-model="checked" aria-label="Toggle ngHide" value="Enter"> -->
-              </form>
-          </div>
-      </div>
-  </div>
+                <form class="form-signin">
+                    <input type="text" name="username" id="inputUsername" class="form-control form-group"
+                        placeholder="username" required autofocus>
+                    <input type="password" name="password" id="inputPassword" class="form-control form-group"
+                        placeholder="password" required autofocus>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
+                        (click)="toogle()">Enter</button>
+                    <!-- <input type="button" ng-model="checked" aria-label="Toggle ngHide" value="Enter"> -->
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- admin table renders here when user logged in -->
-<app-admin-table *ngIf="show"></app-admin-table>
-
+<!-- bind mock data which user will send from frontend into users array in app.component.ts to the admin.component.html here -->
+<div *ngIf="show">
+    <!-- find a way to resolve creating a new list here by moving user details to admin table -->
+    <app-admin-table *ngFor="let user of users" [caseNumber]="user.caseNumber" [firstName]="user.firstName"
+        [lastName]="user.lastName" [address]="user.address" [status]="user.status"></app-admin-table>
+</div>

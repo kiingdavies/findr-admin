@@ -1,8 +1,8 @@
-
-  
-  <table class="table">
+<!-- users table -->
+<div>
+  <table class="table table-striped">
     <thead class="thead-light">
-      <tr>
+      <tr >
         <th scope="col">Case Number</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
@@ -11,43 +11,22 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
+
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>
-          <button type="button" class="btn btn-success">Resolved</button>
-      </td>
-        <td>
-            <button type="button" class="btn btn-danger">Delete</button>
+        <th scope="row">{{caseNumber}}</th>
+        <td >{{firstName}}</td>
+        <td >{{lastName}}</td>
+        <td >{{address}}</td>
+        <td >
+          <button type="button" class="btn btn-success" *ngIf="status">Resolved</button>
         </td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>
-          <button type="button" class="btn btn-danger">Active</button>
-      </td>
-        <td>
-            <button type="button" class="btn btn-danger">Delete</button>
+        <td >
+          <button type="button" class="btn btn-danger">Delete</button>
         </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td>
-          <button type="button" class="btn btn-success">Resolved</button>
-      </td>
-        <td>
-            <button type="button" class="btn btn-danger">Delete</button>
-        </td>
+
       </tr>
     </tbody>
   </table>
+</div>
+
